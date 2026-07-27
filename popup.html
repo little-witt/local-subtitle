@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>France.tv 字幕翻译</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>字幕翻译</h1>
+        <label class="switch">
+          <input id="enabled" type="checkbox">
+          <span>启用</span>
+        </label>
+      </header>
+
+      <section class="status">
+        <div id="statusLine">未检测到页面状态</div>
+        <div id="errorLine"></div>
+      </section>
+
+      <label>
+        <span>本地翻译服务</span>
+        <select id="provider">
+          <option value="ollama">Ollama</option>
+          <option value="libretranslate">LibreTranslate</option>
+        </select>
+      </label>
+
+      <label>
+        <span>端点</span>
+        <input id="endpoint" type="url" spellcheck="false">
+      </label>
+
+      <label id="modelRow">
+        <span>Ollama 模型</span>
+        <input id="model" type="text" spellcheck="false">
+      </label>
+
+      <div class="grid">
+        <label>
+          <span>源语言</span>
+          <input id="sourceLanguage" type="text" spellcheck="false">
+        </label>
+        <label>
+          <span>目标语言</span>
+          <input id="targetLanguage" type="text" spellcheck="false">
+        </label>
+      </div>
+
+      <label class="check">
+        <input id="hideNativeCaptions" type="checkbox">
+        <span>隐藏原始字幕</span>
+      </label>
+
+      <button id="testButton" type="button">测试本地翻译</button>
+      <pre id="testOutput"></pre>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

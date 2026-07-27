@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "France.tv Local Subtitle Translator",
+  "version": "0.1.0",
+  "description": "Translate france.tv video subtitles to Simplified Chinese through a local-only translation service.",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": [
+    "https://france.tv/*",
+    "https://www.france.tv/*",
+    "https://*.france.tv/*",
+    "http://127.0.0.1/*",
+    "http://localhost/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://france.tv/*",
+        "https://www.france.tv/*",
+        "https://*.france.tv/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "France.tv 字幕翻译",
+    "default_popup": "popup.html"
+  }
+}

@@ -1,0 +1,161 @@
+:root {
+  color-scheme: light dark;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 14px;
+}
+
+body {
+  width: 340px;
+  margin: 0;
+  color: #1f2328;
+  background: #f7f7f5;
+}
+
+main {
+  padding: 14px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+label span {
+  color: #4b5563;
+  font-size: 12px;
+}
+
+input,
+select,
+button {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 34px;
+  border: 1px solid #c8c7c1;
+  border-radius: 6px;
+  padding: 7px 9px;
+  color: #171717;
+  background: #fff;
+  font: inherit;
+}
+
+input[type="checkbox"] {
+  width: 16px;
+  min-height: 16px;
+  margin: 0;
+}
+
+button {
+  margin-top: 8px;
+  color: #fff;
+  background: #145a53;
+  border-color: #145a53;
+  cursor: pointer;
+  font-weight: 650;
+}
+
+button:disabled {
+  cursor: progress;
+  opacity: 0.68;
+}
+
+.switch,
+.check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.switch span,
+.check span {
+  color: #1f2328;
+  font-size: 13px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.status {
+  border: 1px solid #d8d6cf;
+  border-radius: 6px;
+  padding: 8px 10px;
+  background: #fff;
+}
+
+#statusLine {
+  color: #2f353c;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+#errorLine {
+  display: none;
+  margin-top: 6px;
+  color: #b42318;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+#testOutput {
+  min-height: 0;
+  max-height: 120px;
+  overflow: auto;
+  margin: 10px 0 0;
+  padding: 8px;
+  border-radius: 6px;
+  color: #2f353c;
+  background: #ecebe5;
+  white-space: pre-wrap;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #eceff3;
+    background: #191c1f;
+  }
+
+  label span,
+  .switch span,
+  .check span,
+  #statusLine,
+  #testOutput {
+    color: #d8dee6;
+  }
+
+  input,
+  select,
+  .status {
+    color: #f4f6f8;
+    background: #24282d;
+    border-color: #3c424a;
+  }
+
+  button {
+    color: #f8fffb;
+    background: #0f766e;
+    border-color: #0f766e;
+  }
+
+  #testOutput {
+    background: #202327;
+  }
+}
