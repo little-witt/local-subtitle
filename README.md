@@ -8,8 +8,11 @@ Chrome/Edge Manifest V3 extension for translating france.tv video subtitles to S
 - `content.js`: subtitle detection and in-video translation overlay.
 - `background.js`: local translation bridge and endpoint validation.
 - `popup.*`: popup UI and settings.
+- `PRIVACY.md`: privacy policy text for local-only translation.
+- `docs/chrome-web-store.md`: Chrome Web Store packaging and submission notes.
 - `docs/implementation-flow.md`: full implementation flow and debugging notes.
 - `scripts/start-ollama-for-extension.sh`: command-line Ollama startup helper.
+- `scripts/package-extension.sh`: creates a Chrome Web Store upload ZIP in `dist/`.
 - `launchd/com.local-subtitle.ollama.plist`: macOS LaunchAgent example for running Ollama with Chrome extension origins enabled.
 
 ## How it works
@@ -60,6 +63,16 @@ http://127.0.0.1:5000
    ```
 
 After changing files in this directory, open the extension page and click the reload button on this unpacked extension.
+
+## Package for Chrome Web Store
+
+Run:
+
+```sh
+scripts/package-extension.sh
+```
+
+The generated ZIP in `dist/` is the upload package. See `docs/chrome-web-store.md` for the store listing checklist and privacy disclosure notes.
 
 ## Troubleshooting
 
